@@ -1,2 +1,5 @@
-/* CSS Document */
+.container {
+	diplay: grid;
+	grid-template: 1fr 1fr 1fr / 50px 50px;
 
+}
