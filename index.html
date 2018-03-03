@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="img/apple-icon.png">
     <link rel="icon" href="img/favicon.png">
     <title>
-        Landing &#45; Material Kit by Creative Tim
+        Timpanogos Tech
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -19,6 +19,34 @@
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/material-kit.css?v=2.0.1">
+
+    <script>
+
+        function _(id) { return document.getElementById(id);}
+
+        function submitFeedback() {
+            _("submitFeedbackbtn").disabled = true;
+            _("submitFeedbackbtn").innerHTML = "Submitting, please wait...";
+            var formData = new FormData();
+            formData.append("name", _("name").value);
+            formData.append("email", _("email").value);
+            formData.append("feedback", _("textFeedback").value);
+            var ajax = new XMLHttpRequest();
+            ajax.open("POST", "sendFeedback.php");
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState === 4 && ajax.status === 200) {
+                    if (ajax.responseText === "success") {
+                        _("feedbackForm").innerHTML = "<h2> Successfully sent :)</h2>";
+                    } else {
+                        _("submitFeedbackbtn").disabled = false;
+                        _("submitFeedbackbtn").innerHTML = ajax.responseText;
+                    }
+                }
+            };
+            ajax.send(formData);
+        }
+
+    </script>
 </head>
 <body class="landing-page">
 <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg " color-on-scroll="100"
@@ -304,6 +332,42 @@
             </script>
             , made with <i class="material-icons">favorite</i> by
             <a href="https://www.creative-tim.com" target="_blank">Mini Mountains</a> for a better web.
+        </div>
+        <button type="button" class="btn btn-primary btn-round" onclick="_('feedBackForm').reset();" data-toggle="modal" data-target="#exampleModal">FEEDBACK</button>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Submit Feedback</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="feedbackForm" onsubmit="submitFeedback()">
+                            <div class="form-group text-left">
+                                <label for="name" class="bmd-label-floating">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <div for="email" class="bmd-label-floating">Email</div>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <div for="textFeedback" class="bmd-label-floating">Feedback</div>
+                                <textarea id="textFeedback" class="form-control" type="textFeedback" rows="4"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                        <button type="button" onclick="submitFeedback(); return false;" id="submitFeedbackbtn" class="btn btn-primary">SEND</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
