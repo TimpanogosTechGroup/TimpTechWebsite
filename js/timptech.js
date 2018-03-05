@@ -8,7 +8,7 @@ function submitFeedback() {
     formData.append("email", _("email").value);
     formData.append("feedback", _("textFeedback").value);
     var ajax = new XMLHttpRequest();
-    ajax.open("POST", "sendFeedback.php");
+    ajax.open("POST", "../scripts/sendFeedback.php");
     ajax.onreadystatechange = function () {
         if (ajax.readyState === 4 && ajax.status === 200) {
             if (ajax.responseText === "success") {
