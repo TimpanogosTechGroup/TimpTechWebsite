@@ -13,7 +13,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['feedback'])
     $feedback = $_POST['feedback'];
 
     //$to = "feedback@timpanogos-tech.com";
-    $to = "register_request@timpanogos-tech.com";
+    $to = "feedback@timpanogos-tech.com";
     $from = $email;
     $message = '<b>Name: </b>'.$name.'<br><b>Email: </b>'.$email.'<br><p>'.$feedback.'</p>';
     $headers = "From: $from\n";

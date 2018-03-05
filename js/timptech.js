@@ -16,7 +16,10 @@ function submitFeedback() {
                 _("submitFeedbackbtn").innerHTML = ajax.responseText;
             } else {
                 _("submitFeedbackbtn").disabled = false;
+                _("textFeedback").innerHTML = ajax.responseText;
             }
+        } else {
+            _("textFeedback").innerHTML = ajax.responseText;
         }
     };
     ajax.send(formData);
