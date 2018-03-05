@@ -52,7 +52,7 @@ Navbar
 						<a class="nav-link" href="#">Members</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Join</a>
+						<a class="nav-link" href="join.html">Join</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="about.html">About</a>
@@ -146,18 +146,18 @@ A summary page for the teams, with a basic description of what they are doing( a
 		<nav class="pull-left">
 			<ul>
 				<li>
-					<a href="https://www.creative-tim.com">
-						Creative Tim
+					<a href="https://www.timpanogos-tech.com">
+						Timpanogos Tech
 					</a>
 				</li>
 				<li>
-					<a href="http://presentation.creative-tim.com">
+					<a href="../index.html">
 						About Us
 					</a>
 				</li>
 				<li>
-					<a href="http://blog.creative-tim.com">
-						Blog
+					<a href="#">
+						Contact
 					</a>
 				</li>
 				<li>
@@ -171,11 +171,46 @@ A summary page for the teams, with a basic description of what they are doing( a
 			&copy;
 			<script>
                 document.write(new Date().getFullYear())
-			</script>, made with <i class="material-icons">favorite</i> by
-			<a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+			</script>
+			, made with <i class="material-icons">favorite</i> by
+			<a href="https://www.creative-tim.com" target="_blank">Mini Mountains</a> for a better web.
 		</div>
+		<button type="button" class="btn btn-primary btn-round" onclick="_('feedBackForm').reset();" data-toggle="modal" data-target="#exampleModal">FEEDBACK</button>
 	</div>
 </footer>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Submit Feedback</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form id="feedbackForm" onsubmit="submitFeedback()">
+					<div class="form-group text-left">
+						<label for="name" class="bmd-label-floating">Name</label>
+						<input type="text" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+						<div for="email" class="bmd-label-floating">Email</div>
+						<input type="email" class="form-control" id="email">
+					</div>
+					<div class="form-group">
+						<div for="textFeedback" class="bmd-label-floating">Feedback</div>
+						<textarea id="textFeedback" class="form-control" type="textFeedback" rows="4"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+				<button type="button" onclick="submitFeedback(); return false;" id="submitFeedbackbtn" class="btn btn-primary">SEND</button>
+			</div>
+		</div>
+	</div>
+</div>
 <!--   Core JS Files   -->
 <script src="../js/core/jquery.min.js"></script>
 <script src="../js/core/popper.min.js"></script>
@@ -188,6 +223,7 @@ A summary page for the teams, with a basic description of what they are doing( a
 <script src="../js/plugins/nouislider.min.js"></script>
 <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
 <script src="../js/material-kit.js?v=2.0.1"></script>
+<script src="../js/timptech.js"></script>
 
 <!--
 
