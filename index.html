@@ -19,7 +19,6 @@
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/material-kit.css?v=2.0.1">
-
     <script>
 
         function _(id) { return document.getElementById(id);}
@@ -37,9 +36,9 @@
                 if (ajax.readyState === 4 && ajax.status === 200) {
                     if (ajax.responseText === "success") {
                         _("feedbackForm").innerHTML = "<h2> Successfully sent :)</h2>";
+                        _("submitFeedbackbtn").innerHTML = ajax.responseText;
                     } else {
                         _("submitFeedbackbtn").disabled = false;
-                        _("submitFeedbackbtn").innerHTML = ajax.responseText;
                     }
                 }
             };
@@ -76,7 +75,7 @@
                         <a class="nav-link" href="#">Members</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Join</a>
+                        <a class="nav-link" href="pages/join.html">Join</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="pages/about.html">About</a>
@@ -90,17 +89,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="alert alert-danger">
-        <div class="container">
-            <div class="alert-icon">
-                <i class="material-icons">error_outline</i>
-            </div>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true"><i class="material-icons">clear</i></span>
-            </button>
-            <b>Error Alert:</b>This website is still under construction...Sorry for the inconvenience
         </div>
     </div>
 </nav>
@@ -129,8 +117,8 @@
         <div class="section text-center">
             <div class="row">
                 <div class="col-md-10 ml-auto mr-auto">
-                    <h2 class="title">Why Timpanogos Tech?</h2>
-                    <h5 class="description">Start Now
+                    <h1>Why Timpanogos Tech?</h1>
+                    <h5 class="description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat sapien tellus,
                         vitae pellentesque urna elementum vitae. Mauris pulvinar, sem ut condimentum sagittis, nisl nisi
                         mollis dui, sit amet venenatis enim eros feugiat quam. Duis euismod consequat ex in aliquam.
@@ -141,43 +129,35 @@
                         Aliquam sit amet vestibulum lacus. Donec sed massa varius risus tempor mattis et scelerisque
                         massa. Ut at augue consequat, euismod enim blandit, iaculis est. Donec tincidunt ligula in elit
                         bibendum, eu gravida urna porttitor.
-                        <!--The job interview has become an increasingly more complicated and lengthy process. There are video screenings, multiple interviews, competition from internal resources etc. This process can be particularly hard for young college candidates, having no previous work experience can make it very difficult to find a good job. And everyone knows that your first job has a big influence on your career moving forward. And something that important shouldn’t be left up to chance, you should start now to prepare for your future career.
-                        According to a well cited study by the Center for American Progress, says that replacing an employee can be a very expensive process. Business have learnt that being thorough and hiring the right person the first time is much more productive than jumping the gun as soon as they have found someone that seems suitable for the position.  They are looking for skills and experience that can prove your ability to complete your job. And not just complete the job, but to be creative, think out of the box, work hard, and be efficient.
-                        I recently had an interview with the CEO of BRENKMAN and Company. He told me that the most important thing he looks for in a future employee is work ethic and passion. He wants to see that they can work hard, live their passion and want to learn. I also believe this is true.
-                        I want to do a little activity with you for a minute. Pause for a second and think of a time that you had to work on a group project for a school assignment. Now, after you have come up with something answer these questions in your head. Who contributed the most? What kind of attributes did they have? The attributes that the person you thought of had, are the same one’s companies are looking for in those they want to hire.
-                        And guess what, you have some of those attributes. Think of what it took to come here to BYU, you are not lazy, you are hard working and you are a well-rounded person! But there is a problem especially for college graduates, what job experience do we have? How are we going to prove that we have those qualities? Most often the only thing we can show that can help prove our competence in the field is our degree and GPA. But what does that say? A GPA I will admit does show to a degree what kind of worker you are, higher GPA’s often mean that you are a hard worker and understand the material you were taught. However, there are many situations that might cause your GPA to drop, family problems, working throughout school, a very competitive program. There are a lot of factors that can influence your GPA, and recruiters can’t solely rely on it to give an accurate judgment whether you are suitable for the company. Mark Babbit said that "employers simply can’t take a chance on someone who won’t mesh well with the existing team, doesn’t share common goals with their colleagues, and are not aligned with the mission of the company."
-                        Fitting into the company culture isn’t something you learn in school how to do. And you just read what Mr Babbit said, employers can’t take a chance. Fitting in with a company requires a different set of skills than taking tests, doing homework and taking good notes during lectures. These skills are skills that need to be developed outside of class, and only the passionate, willing to learn, and hard workers will develop them the most.
-                        We need to take this part of our education seriously, things like working in a team, taking interest in the outcome of your work, learning how to use the tools available in the professional field. If you are passionate about what you do in your career, you will go above and beyond what is required of you to do in class. You never now what life is going to throw at you, but you can take action now and develop skills, join a club, become a president of one, start and finish personal projects, get into groups with people that have the same interests as you, volunteer. Related or not related, you will become a person more capable of handling whatever challenge might come your way.
-                        Taking action of your own education is a great way to develop and prove your work ethic to a potential employer. Your future recruiters will be able to see what you have done and what you will be able to do for their company. They will be able to see your passion, work ethic and team skills and know you would be a perfect fit. And the best time to start, if you haven’t already, is now.-->
-                    </h5>
+                       </h5>
                 </div>
             </div>
-            <div class="features">
+            <div class="features text-center">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 m-md-auto">
                         <div class="info">
                             <div class="icon icon-info">
-                                <i class="material-icons">chat</i>
+                                <i class="material-icons">extension</i>
                             </div>
                             <h4 class="info-title">Join a team</h4>
                             <p>Divide details about your product or agency work into parts. Write a few lines about each
                                 one. A paragraph describing a feature will be enough.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 m-md-auto">
                         <div class="info">
                             <div class="icon icon-success">
-                                <i class="material-icons">verified_user</i>
+                                <i class="material-icons">device_hub</i>
                             </div>
                             <h4 class="info-title">Start a team</h4>
                             <p>Divide details about your product or agency work into parts. Write a few lines about each
                                 one. A paragraph describing a feature will be enough.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 m-md-auto">
                         <div class="info">
                             <div class="icon icon-danger">
-                                <i class="material-icons">fingerprint</i>
+                                <i class="material-icons">explore</i>
                             </div>
                             <h4 class="info-title">Learn more about what we do</h4>
                             <p>We are a student organization devoted to helping college students build useful skills for
@@ -188,78 +168,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="section text-center">
-            <h2 class="title">Here is our team</h2>
-            <div class="team">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="team-player">
-                            <div class="card card-plain">
-                                <div class="col-md-6 ml-auto mr-auto">
-                                    <img src="../assets/img/faces/avatar.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                                </div>
-                                <h4 class="card-title">Gigi Hadid
-                                    <br>
-                                    <small class="card-description text-muted">Model</small>
-                                </h4>
-                                <div class="card-body">
-                                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                                </div>
-                                <div class="card-footer justify-content-center">
-                                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-player">
-                            <div class="card card-plain">
-                                <div class="col-md-6 ml-auto mr-auto">
-                                    <img src="../assets/img/faces/christian.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                                </div>
-                                <h4 class="card-title">Christian Louboutin
-                                    <br>
-                                    <small class="card-description text-muted">Designer</small>
-                                </h4>
-                                <div class="card-body">
-                                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                                </div>
-                                <div class="card-footer justify-content-center">
-                                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-player">
-                            <div class="card card-plain">
-                                <div class="col-md-6 ml-auto mr-auto">
-                                    <img src="../assets/img/faces/kendall.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                                </div>
-                                <h4 class="card-title">Kendall Jenner
-                                    <br>
-                                    <small class="card-description text-muted">Model</small>
-                                </h4>
-                                <div class="card-body">
-                                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                                        <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                                </div>
-                                <div class="card-footer justify-content-center">
-                                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div class="section section-contacts">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
@@ -297,6 +205,17 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="alert alert-danger">
+    <div class="container">
+        <div class="alert-icon">
+            <i class="material-icons">error_outline</i>
+        </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+        </button>
+        <b>Error Alert:</b>This website is still under construction...Sorry for the inconvenience
     </div>
 </div>
 <footer class="footer ">
@@ -383,39 +302,6 @@
 <script src="js/plugins/nouislider.min.js"></script>
 <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
 <script src="js/material-kit.js?v=2.0.1"></script>
-
-<!--
-
-<script src="../js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-<script src="../js/plugins.js"></script>
-<script src="js/main.js"></script>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID.
-<script>
-    window.ga = function () {
-        ga.q.push(arguments)
-    };
-    ga.q = [];
-    ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('send', 'pageview')
-</script>
-<script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
 </body>
 
 </html>

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter home="ssh://timpano1@timanogos-tech.com@www.timpanogos-tech.com:22/usr/bin/php" id="90fee87d-638d-4251-826b-7d95a09e6c62" name="Remote PHP" debugger_id="php.debugger.XDebug">
-        <remote_data HOST="www.timpanogos-tech.com" PORT="22" USERNAME="timpano1@timanogos-tech.com" PRIVATE_KEY_FILE="C:\Users\Ben Brenkman\PhpstormProjects\TimpTechWebsite\id_rsa.pub" USE_KEY_PAIR="true" USE_AUTH_AGENT="false" INTERPRETER_PATH="/usr/bin/php" HELPERS_PATH="" INITIALIZED="false" VALID="true" />
+      <interpreter home="ssh://timpano1@www.timpanogos-tech.com:22/usr/bin/php" id="90fee87d-638d-4251-826b-7d95a09e6c62" name="Remote PHP" debugger_id="php.debugger.XDebug">
+        <remote_data HOST="www.timpanogos-tech.com" PORT="22" USERNAME="timpano1" PRIVATE_KEY_FILE="" USE_KEY_PAIR="false" USE_AUTH_AGENT="false" INTERPRETER_PATH="/usr/bin/php" HELPERS_PATH="" INITIALIZED="false" VALID="true" />
       </interpreter>
     </interpreters>
   </component>
