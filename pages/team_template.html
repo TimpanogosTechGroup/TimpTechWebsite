@@ -1,16 +1,17 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Timpanogos-Tech - $team_name$</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="manifest" href="../site.webmanifest">
-	<link rel="apple-touch-icon" href="../icon.png">
-	<!-- Place favicon.ico in the root directory -->
-
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="../img/apple-icon.png">
+	<link rel="icon" href="../img/favicon.png">
+	<title>
+		Timpanogos Tech
+	</title>
+	<!--     Fonts and icons     -->
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/main.css">
 
@@ -18,19 +19,10 @@
 		  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="../css/material-kit.css?v=2.0.1">
-
 </head>
-<body>
-
-<!-- ******************************************************************************************
-***********************************************************************************************
-
-Navbar
-
-***********************************************************************************************
-*******************************************************************************************
--->
-<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
+<body class="landing-page">
+<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg " color-on-scroll="100"
+	 id="sectionsNav">
 	<div class="container">
 		<div class="navbar-translate">
 			<a class="navbar-brand" href="../index.html">Timpanogos Tech </a>
@@ -40,104 +32,186 @@ Navbar
 			</button>
 		</div>
 		<div class="collapse navbar-collapse">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="team.html">Teams</a>
+					<li class="nav-item">
+						<a class="nav-link" href="../pages/team.html">Teams</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Members</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="join.html">Join</a>
+						<a class="nav-link" href="../pages/join.html">Join</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="about.html">About</a>
+						<a class="nav-link" href="../pages/about.html">About</a>
 					</li>
 				</ul>
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/Timpanogos-Tech-560674584311834/" target="_blank" data-original-title="Like us on Facebook"><i class="fa fa-facebook-square"></i></a>
+						<a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+						   href="https://www.facebook.com/Timpanogos-Tech-560674584311834/" target="_blank"
+						   data-original-title="Like us on Facebook"><i class="fa fa-facebook-square"></i></a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </nav>
-
-<div class="page-header header-filter" data-parallax="true" style=" background-image: url('../img/testImage.jpg');">
+<div class="page-header header-filter" data-parallax="true" style=" background-image: url('../img/timp test.jpg');">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h1 class="title ">Our Teams.</h1>
-				<h4>Explore our teams, and what they are currently working on.</h4>
+				<h1 class="title" style="font-weight: 700;">Mini-Mountains</h1>
+				<h4>We are the jacks of all trades that keep organizations up and running. Our purpose is to help other
+				teams to get their ideas off the ground and make them public. Keep scrolling to find out more!</h4>
+				<br>
 			</div>
+		</div>
+		<div class="row">
+			<div class="space-110"></div>
 		</div>
 	</div>
 </div>
 
-<!-- ******************************************************************************************
-***********************************************************************************************
-
-A summary page for the teams, with a basic description of what they are doing( and how to join?)
-
-tokens:
-	$team_image$		Path to the teams image
-	$team_name$			Name of the team
-	$team_description$	Description of the team
-	$team_project$		What the team is doing now
-
-***********************************************************************************************
-******************************************************************************************* -->
-
 <div class="main main-raised">
 	<div class="container">
 		<div class="section text-center">
-			<div class = "row">
-				<div class = "col">
-					<div class="card mb-3" >
-						<img class="card-img-top" src="$team_image$" alt="$team_name$">
-						<div class="card-body">
-							<h2 class="card-title text-center">$team_name$</h2>
-							<p class="card-text">$team_description$</p>
-							<h3 class = "card-subtitle"><strong>What We're Doing</strong></h3>
-							<p class = "card-text">$team_project$
-							<a href="#" class="btn btn-primary">Dummy Button</a>
+			<div class="row">
+				<div class="col-md-auto ml-auto mr-auto">
+					<h1>Timpanogos-Tech Website</h1>
+					<div>
+						<img src="../img/members/jacob.JPG" style="border-radius: 50%; max-width: 15%; margin: auto 5%;" alt="Jacob">
+						<img src="../img/members/ellie.JPG" style="border-radius: 50%; max-width: 15%; margin: auto 5%;" alt="Ellie">
+						<img src="../img/members/ben.JPG" style="border-radius: 50%; max-width: 15%; margin: auto 5%;" alt="Ben">
+					</div>
+					<div class="">
+						<span class="badge badge-pill badge-dark">HTML</span>
+						<span class="badge badge-pill badge-dark">CSS</span>
+						<span class="badge badge-pill badge-dark">PHP</span>
+						<span class="badge badge-pill badge-dark">JAVASCRIPT</span>
+						<span class="badge badge-pill badge-dark">Web Design</span>
+						<span class="badge badge-pill badge-dark">Website</span>
+						<span class="badge badge-pill badge-dark">Database</span>
+						<span class="badge badge-pill badge-dark">Internet</span>
+					</div>
+					<h5 class="description">
+						We are working on getting Timpanogos Tech up and running! Everything you see on this website was
+						written and developed by Mini-Mountains. We are working on the front-end HTML and CSS that you
+						see as well as PHP and Javascript that you don't.
+					</h5>
+				</div>
+			</div>
+			<div class="features text-center">
+				<div class="row">
+					<div class="col-md-4 m-md-auto">
+						<div class="info">
+							<div class="icon icon-info">
+								<i class="material-icons">extension</i>
+							</div>
+							<h4 class="info-title">Join a team</h4>
+							<p>Divide details about your product or agency work into parts. Write a few lines about each
+								one. A paragraph describing a feature will be enough.</p>
+						</div>
+					</div>
+					<div class="col-md-4 m-md-auto">
+						<div class="info">
+							<div class="icon icon-success">
+								<i class="material-icons">device_hub</i>
+							</div>
+							<h4 class="info-title">Start a team</h4>
+							<p>Divide details about your product or agency work into parts. Write a few lines about each
+								one. A paragraph describing a feature will be enough.</p>
+						</div>
+					</div>
+					<div class="col-md-4 m-md-auto">
+						<div class="info">
+							<div class="icon icon-danger">
+								<i class="material-icons">explore</i>
+							</div>
+							<h4 class="info-title">Learn more about what we do</h4>
+							<p>We are a student organization devoted to helping college students build useful skills for
+								work. We have serveral teams working on projects ranging from maachine learning to
+								building toys.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="section section-contacts">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto">
+					<h2 class="text-center title">Start Now</h2>
+					<h4 class="text-center description">Divide details about your product or agency work into parts.
+						Write a few lines about each one and contact us about any further collaboration. We will
+						responde get back to you in a couple of hours.</h4>
+					<form class="contact-form">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="bmd-label-floating">Your Name</label>
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="bmd-label-floating">Your Email</label>
+									<input type="email" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="exampleMessage" class="bmd-label-floating">Your Message</label>
+							<textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
+						</div>
+						<div class="row">
+							<div class="col-md-4 ml-auto mr-auto text-center">
+								<button class="btn btn-primary btn-raised">
+									Send Message
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-<!-- ******************************************************************************************
-***********************************************************************************************
-
-A summary page for the teams, with a basic description of what they are doing( and how to join?)
-
-***********************************************************************************************
-******************************************************************************************* -->
-
+<div class="alert alert-danger">
+	<div class="container">
+		<div class="alert-icon">
+			<i class="material-icons">error_outline</i>
+		</div>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true"><i class="material-icons">clear</i></span>
+		</button>
+		<b>Error Alert:</b>This website is still under construction...Sorry for the inconvenience
+	</div>
+</div>
 <footer class="footer ">
 	<div class="container">
 		<nav class="pull-left">
 			<ul>
 				<li>
-					<a href="https://www.creative-tim.com">
-						Creative Tim
+					<a href="https://www.timpanogos-tech.com">
+						Timpanogos Tech
 					</a>
 				</li>
 				<li>
-					<a href="http://presentation.creative-tim.com">
+					<a href="../index.html">
 						About Us
 					</a>
 				</li>
 				<li>
-					<a href="http://blog.creative-tim.com">
-						Blog
+					<a href="#">
+						Contact
 					</a>
 				</li>
 				<li>
@@ -151,12 +225,47 @@ A summary page for the teams, with a basic description of what they are doing( a
 			&copy;
 			<script>
                 document.write(new Date().getFullYear())
-			</script>, made with <i class="material-icons">favorite</i> by
-			<a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+			</script>
+			, made with <i class="material-icons">favorite</i> by
+			<a href="https://www.creative-tim.com" target="_blank">Mini Mountains</a> for a better web.
 		</div>
+		<button type="button" class="btn btn-primary btn-round" onclick="_('feedBackForm').reset();" data-toggle="modal" data-target="#exampleModal">FEEDBACK</button>
 	</div>
 </footer>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Submit Feedback</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form id="feedbackForm" onsubmit="submitFeedback()">
+					<div class="form-group text-left">
+						<label for="name" class="bmd-label-floating">Name</label>
+						<input type="text" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+						<div for="email" class="bmd-label-floating">Email</div>
+						<input type="email" class="form-control" id="email">
+					</div>
+					<div class="form-group">
+						<div for="textFeedback" class="bmd-label-floating">Feedback</div>
+						<textarea id="textFeedback" class="form-control" type="textFeedback" rows="4"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+				<button type="button" onclick="submitFeedback(); return false;" id="submitFeedbackbtn" class="btn btn-primary">SEND</button>
+			</div>
+		</div>
+	</div>
+</div>
 <!--   Core JS Files   -->
 <script src="../js/core/jquery.min.js"></script>
 <script src="../js/core/popper.min.js"></script>
