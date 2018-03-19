@@ -102,15 +102,22 @@ session_start();
                 if (mysqli_num_rows($result) > 0) {
                     // output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
+
+                        // Get username and such from users table
+                        $sqlUsername = "SELECT * FROM users WHERE ID = ".$row['ID'];
+                        $userResult = mysqli_query($conn, $sqlUsername);
+                        $sqlrow = mysqli_fetch_assoc($userResult);
+                        $nameUser = $sqlrow['username'];
+
                         echo "<div class='col-lg-2'>";
                         echo "<div class=\"card card-profile\" style=\"max-width: 360px\">";
                         echo "<div class=\"card-header card-header-image\">";
-                        echo "<a href=\"#pablo\">";
-                        echo "<img class=\"img\" src=\"../../img/members/ellie.JPG\">";
-                        echo "</a>";
+//                        echo "<a href=\"#pablo\">";
+                        echo "<a href=\"#pablo\"><img class=\"img\" src='../../img/members/".$nameUser."_profile.JPG' </a>";
+//                        echo "</a>";
                         echo "</div>";
                         echo "<div class=\"card-body\">";
-                        echo"<h4 class=\"card-title\">".$row["firstname"]." ".$row["lastname"]."</h4>";
+                        echo"<h4 class=\"card-title\">".$row["firstname"].' '.$row["lastname"]."</h4>";
                         echo"<h6 class=\"card-category text-gray\">".$row["role"]."</h6>";
                         echo"</div>";
                         echo"<div class=\"card-footer justify-content-center\">";
@@ -121,6 +128,8 @@ session_start();
                         $formID = "sendID".$row['ID'];
                         echo"<form method='POST' id='".$formID."'  action='../profile/'>";
                         echo"<input type='hidden' name='id' value=".$row['ID'].">";
+                        echo"<input type='hidden' name='name' value='".$row['firstname']." ".$row['lastname']."'>";
+                        echo"<input type='hidden' name='role' value='".$row['role']."'>";
                         echo"</form>";
                     }
                 } else {
