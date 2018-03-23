@@ -98,6 +98,11 @@ if (isset($_POST['id'])) {
                            href="https://www.facebook.com/Timpanogos-Tech-560674584311834/" target="_blank"
                            data-original-title="Like us on Facebook"><i class="fa fa-facebook-square"></i></a>
                     </li>
+                    <li class="nav-item">
+                        <button class="btn btn-round btn-primary" data-toggle="modal" data-target="#loginModal">
+                            Login
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -191,6 +196,92 @@ if (isset($_POST['id'])) {
         </button>
     </div>
 </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Submit Feedback</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm" onsubmit="submitFeedback()">
+                    <div class="form-group text-left">
+                        <label for="name" class="bmd-label-floating">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <div for="email" class="bmd-label-floating">Email</div>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <div for="textFeedback" class="bmd-label-floating">Feedback</div>
+                        <textarea id="textFeedback" class="form-control" type="textFeedback" rows="4"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                <button type="button" onclick="submitFeedback(); return false;" id="submitFeedbackbtn" class="btn btn-primary">SEND</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="">
+    <div class="modal-dialog modal-login" role="document">
+        <div class="modal-content">
+            <div class="card card-signup card-plain">
+                <div class="modal-header">
+                    <div class="card-header card-header-primary text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                        <h4 class="card-title">Log in</h4>
+                        <div class="social-line">
+                            <a href="#pablo" class="btn btn-just-icon btn-link">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-just-icon btn-link">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-just-icon btn-link">
+                                <i class="fa fa-google-plus"></i>
+                                <div class="ripple-container"></div></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form class="form" method="post">
+                        <div class="card-body align-content-center">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <!--                                    <span class="input-group-addon">-->
+                                    <!--                                        <i class="material-icons">email</i>-->
+                                    <!--                                    </span>-->
+                                    <input type="text" name="username" class="form-control" placeholder="User Name...">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <!--                                    <span class="input-group-addon">-->
+                                    <!--                                        <i class="material-icons">lock_outline</i>-->
+                                    <!--                                    </span>-->
+                                    <input type="password" placeholder="Password..." class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--   Core JS Files   -->
 <script src="../../js/core/jquery.min.js"></script>
 <script src="../../js/core/popper.min.js"></script>

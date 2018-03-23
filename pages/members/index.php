@@ -57,9 +57,8 @@ session_start();
                            data-original-title="Like us on Facebook"><i class="fa fa-facebook-square"></i></a>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-round" data-toggle="modal" data-target="#loginModal">
-                            Login<i class="material-icons">assignment</i>
-
+                        <button class="btn btn-round btn-primary" data-toggle="modal" data-target="#loginModal">
+                            Login
                         </button>
                     </li>
                 </ul>
