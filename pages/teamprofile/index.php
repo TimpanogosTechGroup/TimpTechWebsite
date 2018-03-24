@@ -1,3 +1,37 @@
+<?php
+session_start();
+
+if (isset($_POST['id'])) {
+    $servername = "localhost";
+    $username = "timpano1_admin";
+    $password = "t1mp@n0g0s";
+    $dbname = "timpano1_members";
+
+    $id = $_POST["id"];
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT * FROM teams WHERE ID = " . $id;
+//                echo $id;
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $teamname = $row["teamname"];
+        $info = $row;
+    } else {
+        echo "Unknown User";
+    }
+
+    mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,28 +40,28 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="img/apple-icon.png">
-    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="../../img/apple-icon.png">
+    <link rel="icon" href="../../img/favicon.png">
     <title>
         Timpanogos Tech
     </title>
     <!--     Fonts and icons     -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/main.css">
 
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/material-kit.css?v=2.0.1">
-    <link rel="stylesheet" href="css/material-kit-pro.min.css?v=2.0.1">
+    <link rel="stylesheet" href="../../css/material-kit.css?v=2.0.1">
+    <link rel="stylesheet" href="../../css/material-kit-pro.min.css?v=2.0.1">
 
 </head>
-<body class="landing-page">
+<body class="profile-page">
 <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg " color-on-scroll="100"
      id="sectionsNav">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" href="index.html">Timpanogos Tech </a>
+            <a class="navbar-brand" href="../../index.html">Timpanogos Tech </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,20 +74,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/teams">Teams</a>
+                        <a class="nav-link active" href="../teams">Teams</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/members/">Members</a>
+                        <a class="nav-link" href="../members">Members</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/join.html">Join</a>
+                        <a class="nav-link" href="../join.html">Join</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/about.html">About</a>
+                        <a class="nav-link" href="../about.html">About</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -72,121 +106,97 @@
         </div>
     </div>
 </nav>
-<div class="page-header header-filter" data-parallax="true" style=" background-image: url('img/timp test.jpg');">
+<div class="page-header header-filter" data-parallax="true"
+     style=" background-image: url('<?php echo "../../img/teams/" . $info['teamname'] . "_profile.png"; ?>');">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="title" style="font-weight: 700;">Your Story Starts With Us.</h1>
-                <h4>Every landing page needs a small description after the big bold title, that&apos;s why we added this
-                    text here. Add here all the information that can make you or your product create the first
-                    impression.</h4>
+                <h1 class="title" style="font-weight: 700;"><?php echo $info['teamname']; ?></h1>
+                <h4><?php echo $info['description']; ?></h4>
                 <br>
-                <!--<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">-->
-                <!--<i class="fa fa-play"></i> Watch video-->
-                <!--</a>-->
             </div>
-        </div>
-        <div class="row">
-            <div class="space-110"></div>
         </div>
     </div>
 </div>
 
 <div class="main main-raised">
     <div class="container">
-        <div class="section text-center">
+        <div class="section">
+            <!--<div class="col-md-auto ml-auto mr-auto">-->
+            <h1>Team Members: </h1>
             <div class="row">
-                <div class="col-md-10 ml-auto mr-auto">
-                    <h1>Why Timpanogos Tech?</h1>
-                    <h5 class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat sapien tellus,
-                        vitae pellentesque urna elementum vitae. Mauris pulvinar, sem ut condimentum sagittis, nisl nisi
-                        mollis dui, sit amet venenatis enim eros feugiat quam. Duis euismod consequat ex in aliquam.
-                        Aenean varius in lectus a maximus. Fusce iaculis at sapien a molestie. Etiam ante erat,
-                        tincidunt ut hendrerit sed, lobortis eget justo. Sed facilisis augue orci, hendrerit ultrices
-                        lectus sollicitudin id. Praesent pretium efficitur nulla, vitae aliquam tortor. Ut euismod
-                        maximus eros quis placerat. Mauris dignissim lectus ut tincidunt congue. Donec eu tortor orci.
-                        Aliquam sit amet vestibulum lacus. Donec sed massa varius risus tempor mattis et scelerisque
-                        massa. Ut at augue consequat, euismod enim blandit, iaculis est. Donec tincidunt ligula in elit
-                        bibendum, eu gravida urna porttitor.
-                       </h5>
+                <div class="col-md-2">
+                    <img src="../../img/members/jacob_profile.JPG" class="img-raised rounded-circle img-fluid"
+                         style="width: 10rem; height: 10rem;" alt="Jacob">
+                </div>
+                <div class="col-md-2">
+                    <img src="../../img/members/ellie_profile.JPG" class="img-raised rounded-circle img-fluid"
+                         style="width: 10rem; height: 10rem;" alt="Ellie">
+                </div>
+                <div class="col-md-2">
+                    <img src="../../img/members/JustBrenkman_profile.JPG" class="img-raised rounded-circle img-fluid"
+                         style="width: 10rem; height: 10rem;" alt="Ben">
                 </div>
             </div>
-        </div>
-        <div class="section section-contacts">
-            <div class="container text-center">
-                <div class="row"><div class="col-lg-12"><h1>I am a...</h1></div></div>
-                <!-- Nav tabs -->
+            <br>
+            <div class="row">
+                <span class="badge badge-pill badge-dark">HTML</span>
+                <span class="badge badge-pill badge-dark">CSS</span>
+                <span class="badge badge-pill badge-dark">PHP</span>
+                <span class="badge badge-pill badge-dark">JAVASCRIPT</span>
+                <span class="badge badge-pill badge-dark">Web Design</span>
+                <span class="badge badge-pill badge-dark">Website</span>
+                <span class="badge badge-pill badge-dark">Database</span>
+                <span class="badge badge-pill badge-dark">Internet</span>
+            </div>
+            <br>
+            <div class="row">
+                <h1>Description</h1>
+                <br>
+                <h5>
+                    We are working on getting Timpanogos Tech up and running! Everything you see on this website was
+                    written and developed by Mini-Mountains. We are working on the front-end HTML and CSS that you
+                    see as well as PHP and Javascript that you don't.
+                </h5>
+            </div>
+            <!--</div>-->
+            <div class="features text-center">
                 <div class="row">
-                    <ul class="nav nav-pills nav-pills-icons" style="margin: auto;" role="tablist">
-                        <div class="col-lg-6 ml-auto mr-auto">
-                            <li class="nav-item" style="width: 20rem;">
-                                <a class="nav-link active" href="#student-tab" role="tab" data-toggle="tab">
-                                    <h2>Student</h2>
-                                </a>
-                            </li>
-                        </div>
-                        <div class="col-lg-6 ml-auto mr-auto">
-                            <li class="nav-item" style="width: 20rem;">
-                                <a class="nav-link" href="#company-tab" role="tab" data-toggle="tab">
-                                    <h2>Company</h2>
-                                </a>
-                            </li>
-                        </div>
-                    </ul>
-
-                    <div class="tab-content tab-space">
-                        <div class="tab-pane active" id="student-tab">
-                            <div class="section text-center ml-auto mr-auto">
-                                <h4>Put something in here about how we can specificaly help the students, what they can expect ect.</h4>
-                                <div class="features text-center">
-                                    <div class="row">
-                                        <div class="col-md-4 m-md-auto">
-                                            <div class="info">
-                                                <div class="icon icon-info">
-                                                    <i class="material-icons">extension</i>
-                                                </div>
-                                                <h4 class="info-title">Join a team</h4>
-                                                <p>Divide details about your product or agency work into parts. Write a few lines about each
-                                                    one. A paragraph describing a feature will be enough.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 m-md-auto">
-                                            <div class="info">
-                                                <div class="icon icon-success">
-                                                    <i class="material-icons">device_hub</i>
-                                                </div>
-                                                <h4 class="info-title">Start a team</h4>
-                                                <p>Divide details about your product or agency work into parts. Write a few lines about each
-                                                    one. A paragraph describing a feature will be enough.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 m-md-auto">
-                                            <div class="info">
-                                                <div class="icon icon-danger">
-                                                    <i class="material-icons">explore</i>
-                                                </div>
-                                                <h4 class="info-title">Learn more about what we do</h4>
-                                                <p>We are a student organization devoted to helping college students build useful skills for
-                                                    work. We have serveral teams working on projects ranging from maachine learning to
-                                                    building toys.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-md-4 m-md-auto">
+                        <div class="info">
+                            <div class="icon icon-info">
+                                <i class="material-icons">extension</i>
                             </div>
+                            <h4 class="info-title">Join a team</h4>
+                            <p>Divide details about your product or agency work into parts. Write a few lines about each
+                                one. A paragraph describing a feature will be enough.</p>
                         </div>
-                        <div class="tab-pane" id="company-tab">
-                            <div class="section text-center ml-auto mr-auto">
-                                <h1>Start a team</h1>
-                                <h4>You select which of the three boxes speack the best with you. You can pick a team that
-                                    you want to contribute to. Or if you don't have a team just tell us some of the skills
-                                    you have and we can help you find a team, or you can create your own team.</h4>
+                    </div>
+                    <div class="col-md-4 m-md-auto">
+                        <div class="info">
+                            <div class="icon icon-success">
+                                <i class="material-icons">device_hub</i>
                             </div>
+                            <h4 class="info-title">Start a team</h4>
+                            <p>Divide details about your product or agency work into parts. Write a few lines about each
+                                one. A paragraph describing a feature will be enough.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 m-md-auto">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="material-icons">explore</i>
+                            </div>
+                            <h4 class="info-title">Learn more about what we do</h4>
+                            <p>We are a student organization devoted to helping college students build useful skills for
+                                work. We have serveral teams working on projects ranging from maachine learning to
+                                building toys.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="section section-contacts">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
                     <h2 class="text-center title">Start Now</h2>
@@ -246,7 +256,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="index.html">
+                    <a href="../../index.html">
                         About Us
                     </a>
                 </li>
@@ -270,12 +280,15 @@
             , made with <i class="material-icons">favorite</i> by
             <a href="https://www.creative-tim.com" target="_blank">Mini Mountains</a> for a better web.
         </div>
-        <button type="button" class="btn btn-primary btn-round" onclick="_('feedBackForm').reset();" data-toggle="modal" data-target="#exampleModal">FEEDBACK</button>
+        <button type="button" class="btn btn-primary btn-round" onclick="_('feedBackForm').reset();" data-toggle="modal"
+                data-target="#exampleModal">FEEDBACK
+        </button>
     </div>
 </footer>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -302,7 +315,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
-                <button type="button" onclick="submitFeedback(); return false;" id="submitFeedbackbtn" class="btn btn-primary">SEND</button>
+                <button type="button" onclick="submitFeedback(); return false;" id="submitFeedbackbtn"
+                        class="btn btn-primary">SEND
+                </button>
             </div>
         </div>
     </div>
@@ -314,7 +329,8 @@
             <div class="card card-signup card-plain">
                 <div class="modal-header">
                     <div class="card-header card-header-primary text-center">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                                    class="material-icons">clear</i></button>
                         <h4 class="card-title">Log in</h4>
                         <div class="social-line">
                             <a href="#pablo" class="btn btn-just-icon btn-link">
@@ -325,7 +341,8 @@
                             </a>
                             <a href="#pablo" class="btn btn-just-icon btn-link">
                                 <i class="fa fa-google-plus"></i>
-                                <div class="ripple-container"></div></a>
+                                <div class="ripple-container"></div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -360,18 +377,18 @@
     </div>
 </div>
 <!--   Core JS Files   -->
-<script src="js/core/jquery.min.js"></script>
-<script src="js/core/popper.min.js"></script>
-<script src="js/bootstrap-material-design.js"></script>
+<script src="../../js/core/jquery.min.js"></script>
+<script src="../../js/core/popper.min.js"></script>
+<script src="../../js/bootstrap-material-design.js"></script>
 <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
-<script src="js/plugins/moment.min.js"></script>
+<script src="../../js/plugins/moment.min.js"></script>
 <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-<script src="js/plugins/bootstrap-datetimepicker.min.js"></script>
+<script src="../../js/plugins/bootstrap-datetimepicker.min.js"></script>
 <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="js/plugins/nouislider.min.js"></script>
+<script src="../../js/plugins/nouislider.min.js"></script>
 <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
-<script src="js/material-kit.js?v=2.0.1"></script>
-<script src="js/timptech.js"></script>
+<script src="../../js/material-kit.js?v=2.0.1"></script>
+<script src="../../js/timptech.js"></script>
 </body>
 
 </html>

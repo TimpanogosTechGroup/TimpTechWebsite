@@ -38,10 +38,10 @@ session_start();
                         <a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../team.html">Teams</a>
+                        <a class="nav-link" href="../teams">Teams</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link">Members</a>
+                        <a class="nav-link" href="../members/">Members</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../join.html">Join</a>
@@ -67,11 +67,11 @@ session_start();
     </div>
 </nav>
 <div class="page-header header-filter" data-parallax="true"
-     style="background-image: url('../../img/timp test.jpg');">
+     style="background-image: url('../../img/timp test.jpg');  height: 50vh;">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="title" style="font-weight: 700;">Join Us.</h1>
+                <h1 class="title" style="font-weight: 700;">Our Members.</h1>
                 <!--<h4></h4>-->
                 <br>
             </div>
