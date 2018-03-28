@@ -36,6 +36,17 @@ if (isset($_POST['id'])) {
 <html lang="en">
 
 <head>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110583929-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110583929-1');
+    </script>
+
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -77,8 +88,8 @@ if (isset($_POST['id'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="../teams">Teams</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../teams">Teams</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../members">Members</a>
@@ -389,6 +400,7 @@ if (isset($_POST['id'])) {
 <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
 <script src="../../js/material-kit.js?v=2.0.1"></script>
 <script src="../../js/timptech.js"></script>
+
 </body>
 
 </html>

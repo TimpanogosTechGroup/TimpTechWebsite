@@ -4,6 +4,17 @@ session_start();
 <!doctype html>
 <html lang="">
 <head>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110583929-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110583929-1');
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Timpanogos Tech - Join</title>
@@ -139,7 +150,7 @@ session_start();
 
                     <form method='POST' id='sendID<?php echo $row['ID'] ?>'  action='../teamprofile/'>
                         <input type='hidden' name='id' value="<?php echo $row['ID']; ?>">
-                    </form>";
+                    </form>
 
                     <?php
 
